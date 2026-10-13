@@ -1,16 +1,15 @@
-const menuToggle = document.getElementById("menuToggle");
-const navMenu = document.getElementById("navMenu");
+const cards = document.querySelectorAll('.auth-card');
+const toggles = document.querySelectorAll('[data-toggle]');
 
-menuToggle.addEventListener("click", () => {
-  const isOpen = navMenu.classList.toggle("open");
-  menuToggle.setAttribute("aria-expanded", String(isOpen));
-});
+function showCard(targetView) {
+  cards.forEach((card) => {
+    const isActive = card.dataset.view === targetView;
+    card.classList.toggle('active', isActive);
+  });
+}
 
-navMenu.querySelectorAll("a").forEach((link) => {
-  link.addEventListener("click", () => {
-    navMenu.classList.remove("open");
-    menuToggle.setAttribute("aria-expanded", "false");
+toggles.forEach((toggle) => {
+  toggle.addEventListener('click', () => {
+    showCard(toggle.dataset.toggle);
   });
 });
-
-document.getElementById("year").textContent = new Date().getFullYear();
