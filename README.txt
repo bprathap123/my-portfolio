@@ -1,5 +1,8 @@
 PRATHAP'S PORTFOLIO — QUICK START
 
+LIVE PORTFOLIO
+- https://bprathap123.github.io/my-portfolio/
+
 FILES
 - index.html: website content
 - style.css: colors and layout
